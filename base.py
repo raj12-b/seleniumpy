@@ -40,10 +40,10 @@ def dc_publishedtab():
 def dc_pendingvalidationtab():
     global browser
     # validate & publish tab
-    browser.find_element_by_id("tab-item-13").click()  # validate and publish tab
-    browser.find_element_by_xpath("//*[@id='wrap']/div[1]/md-content/div[1]/md-input-container/md-select").click()  # open store dropdown in validate&publish
-    browser.find_element_by_xpath("/html/body/div[3]/md-select-menu/md-content/md-option[4]").click()  # select the 4th store(rstore)
-    browser.implicitly_wait(10)
+    #browser.find_element_by_id("tab-item-13").click()  # validate and publish tab
+    #browser.find_element_by_xpath("//*[@id='wrap']/div[1]/md-content/div[1]/md-input-container/md-select").click()  # open store dropdown in validate&publish
+    #browser.find_element_by_xpath("/html/body/div[3]/md-select-menu/md-content/md-option[4]").click()  # select the 4th store(rstore)
+    #browser.implicitly_wait(10)
     # pending validation tab
     browser.find_element_by_css_selector("#publishTabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:nth-child(1)").click()
     browser.implicitly_wait(6)
