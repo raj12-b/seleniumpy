@@ -22,9 +22,10 @@ def dc_validatepage(n): #go to validate page and select the store(nth store sent
     # validate & publish page
     global browser
     browser.find_element_by_id("tab-item-13").click()  # validate and publish tab
+    time.sleep(4)
     browser.find_element_by_xpath("//*[@id='wrap']/div[1]/md-content/div[1]/md-input-container/md-select").click()  # open store dropdown in validate&publish
-    time.sleep(1)
-    browser.find_element_by_xpath("/html/body/div[3]/md-select-menu/md-content/md-option["+str(n)+"]").click()  # select the nth store
+    time.sleep(2)
+    browser.find_element_by_css_selector("body > div.md-select-menu-container.md-active.md-clickable > md-select-menu > md-content > md-option:nth-child("+str(n)+")").click()  # select the nth store
     browser.implicitly_wait(10)
 
 def dc_publishedtab():
@@ -187,3 +188,10 @@ def dc_searchandmove(store, skuname):   # move an item from general catalog
         # toaster wait
         time.sleep(8)
     # move complete
+
+def dc_logout():
+    browser.find_element_by_css_selector(
+        "body > header-directive > md-toolbar > div > div.pull-right > div:nth-child(3) > md-menu > button").click()
+    time.sleep(2)
+    browser.find_element_by_css_selector(
+        "body > div._md.md-open-menu-container.md-whiteframe-z2.md-active.md-clickable > md-menu-content > md-menu-item:nth-child(2) > button").click()
