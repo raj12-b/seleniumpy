@@ -195,3 +195,9 @@ def dc_logout():
     time.sleep(2)
     browser.find_element_by_css_selector(
         "body > div._md.md-open-menu-container.md-whiteframe-z2.md-active.md-clickable > md-menu-content > md-menu-item:nth-child(2) > button").click()
+
+def dc_openStore():
+    # enter the API url
+    browser.get("https://catalog-dev.digicontent.io/token/O3-b4NxVlzvqBO2zx_GM31Ri8gr4MAMDoq1q_pWHpvM/create")
+    browser.maximize_window()
+    time.sleep(15)
